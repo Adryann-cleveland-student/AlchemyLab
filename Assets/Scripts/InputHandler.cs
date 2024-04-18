@@ -7,13 +7,13 @@ public class InputHandler : MonoBehaviour
 
     FirstPerson firstPerson;
     Movement movement;
-
+    PlayerInteraction playerInteraction;
     // Start is called before the first frame update
     void Start()
     {
         firstPerson = GetComponent<FirstPerson>();
         movement = GetComponent<Movement>();
-
+        playerInteraction = GetComponent<PlayerInteraction>();
     }
 
     // Update is called once per frame
@@ -21,6 +21,7 @@ public class InputHandler : MonoBehaviour
     {
         HandleCameraInput();
         HandleMoveInput();
+        HandleInteractionInput();
     }
 
     void HandleCameraInput()
@@ -35,5 +36,12 @@ public class InputHandler : MonoBehaviour
         float rightInput = Input.GetAxis("Horizontal");
 
         movement.AddMoveInput(forwardInput, rightInput);
+    }
+    void HandleInteractionInput()
+    {
+        if(Input.GetKeyDown(KeyCode.E)) 
+        { 
+        playerInteraction.TryInteract();
+        }
     }
 }
