@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private float maxDistance = 2f;
-   
-    [SerializeField] private Text interactableDescription;
 
-    private Text interactableName;
+    [SerializeField] private Text interactableName;
     // Start is called before the first frame update
 
     // Update is called once per frame
