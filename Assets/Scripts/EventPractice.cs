@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 public class EventPractice : MonoBehaviour
 {
-    UnityEvent testEvent = new UnityEvent();
+    public UnityEvent testEvent = new UnityEvent();
     // Start is called before the first frame update
     void Start()
     {

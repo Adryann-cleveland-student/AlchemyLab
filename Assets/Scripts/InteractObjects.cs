@@ -1,10 +1,12 @@
 
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractObjects : MonoBehaviour
 {
    [SerializeField] private string interactionText = "Im an interactable object";
 
+    public UnityEvent OnInteract = new UnityEvent();
     public string GetInteractionText()
     {
         return interactionText;
@@ -12,6 +14,7 @@ public class InteractObjects : MonoBehaviour
 
     public void Interact()
     {
-        print("ive been interacted with!");
+        OnInteract.Invoke();
     }
+     
 }
