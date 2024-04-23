@@ -1,18 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 public class Objective : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]private Text ObjectiveDisplay;
+    [SerializeField]private string objectiveText = "I am an objective!";
+    [SerializeField]private string completedText = "Wahoo you've completed an objective!";
 
-    // Update is called once per frame
-    void Update()
+    public UnityEvent OnCompleteObjective = new UnityEvent();
+    private void OnEnable()
     {
-        
+        ObjectiveDisplay.text = objectiveText;
+    }
+    public void CompleteObjective()
+    {
+        if (gameObject.activeSelf)
+        {
+            ObjectiveDisplay.text = " ";
+
+            OnCompleteObjective.Invoke();
+
+            gameObject.SetActive(false);
+        }
     }
 }
