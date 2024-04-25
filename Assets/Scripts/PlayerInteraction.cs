@@ -26,7 +26,7 @@ public class PlayerInteraction : MonoBehaviour
       
         }
 
-        if(targetInteraction)
+        if(targetInteraction && targetInteraction.enabled)
         {
             interactionText = targetInteraction.GetInteractionText();
         }
@@ -41,7 +41,7 @@ public class PlayerInteraction : MonoBehaviour
     }
     public void TryInteract()
     {
-        if(targetInteraction)
+        if(targetInteraction && targetInteraction.enabled)
         {
             targetInteraction.Interact();
         }    
