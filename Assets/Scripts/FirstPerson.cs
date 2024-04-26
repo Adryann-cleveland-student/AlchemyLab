@@ -16,6 +16,10 @@ public class FirstPerson : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private void OnDisable()
+    {
+        Cursor.lockState= CursorLockMode.None;
+    }
     // Update is called once per frame
 
 

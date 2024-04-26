@@ -18,8 +18,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void LoadScene(string newSceneName)
+    public static void LoadScene(string newSceneName)
     {
         SceneManager.LoadScene(newSceneName);
+    }
+
+    public static void Quit()
+    {
+        Application.Quit(); 
     }
 }
